@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./area.js"></script>
+    <script src="./common.js"></script>
+    <style>
+      ::-webkit-scrollbar{
+        display: none;
+      }
+    </style>
+</head>
+
+<body class="bg-[#2120201a] ">
+    <main class="container mx-auto pt-10">
+        <section class="grid grid-cols-4 gap-10">
+            <div class="col-span-3 ">
+              
+              <!-- --------------------- -->
+               <div class="grid grid-cols-3 gap-4">
+                <!-- Triangle------- -->
+                <div class="card  bg-base-100 hover:bg-[#c743aa] hover:duration-1000 shadow-xl p-12">
+                  <figure><img src="./images/triangle.png" alt="Shoes" /></figure>
+                  <div class="card-body">
+                    <h2 class="card-title justify-center">Triangle</h2>
+                    <p class="text-center">Area (A) =0.5 x b x h</p>
+                    <div class="flex justify-center">
+                      <input id="triangle-base" class="bg-[#F1F1F1] p-2 w-24 rounded-md" type="text" placeholder="b">
+                      <span class="pr-6 pt-2">cm</span>
+                      <input id="triangle-height" class="bg-[#F1F1F1] p-2 w-24 rounded-md" type="text" placeholder="h">
+                      <span class="pt-2">cm</span>
+                    </div>
+                    <p>Area (A) =<span id="triange-area-value">0</span> <span>cm<sup>2</sup> </span> </p>
+                    <div class="card-actions">
+                      <button onclick="triangleArea()" class="btn btn-primary w-full">Calculate</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Rectangle------ -->
+                <div class="card  bg-base-100 shadow-xl p-12 hover:bg-[#4caf50] hover:duration-1000">
+                  <figure><img src="./images/rectangle.png" alt="Shoes" /></figure>
+                  <div class="card-body">
+                    <h2 id="r-name" class="card-title justify-center">Rectangle</h2>
+                    <p class="text-center">Area (A) = w x l</p>
+                    <div class="flex justify-center">
+                      <input id="rectangle-width" class="bg-[#F1F1F1] p-2 w-24 rounded-md" type="text" placeholder="w">
+                      <span class="pr-6 pt-2">cm</span>
+                      <input id="rectangle-length" class="bg-[#F1F1F1] p-2 w-24 rounded-md" type="text" placeholder="l">
+                      <span class="pt-2">cm</span>
+                    </div>
+                    <p>Area (A) =<span id="rectangle-area-value">0</span> <span>cm<sup>2</sup> </span> </p>
+                    <div class="card-actions">
+                      <button onclick="rectangleArea()" class="btn btn-primary w-full">Calculate</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- parallelogram------------ -->
+                <div class="card  bg-base-100 shadow-xl p-12 hover:bg-[#9152f0] hover:duration-1000">
+                  <figure><img src="./images/parallelogram.png" alt="Shoes" /></figure>
+                  <div class="card-body">
+                    <h2 class="card-title justify-center">Parallelogram</h2>
+                    <p class="text-center">Area (A) = b x h</p>
+                    <div class="flex justify-center">
+                      <input id="parallelogram-base" class="bg-[#F1F1F1] p-2 w-24 rounded-md" type="text" placeholder="b">
+                      <span class="pr-6 pt-2">cm</span>
+                      <input id="parallelogram-height" class="bg-[#F1F1F1] p-2 w-24 rounded-md" type="text" placeholder="h">
+                      <span class="pt-2">cm</span>
+                    </div>
+                    <p>Area (A) =<span id="parallelogram-area-value">0</span> <span>cm<sup>2</sup> </span> </p>
+                    <div class="card-actions">
+                      <button onclick="parallelogramArea()" class="btn btn-primary w-full">Calculate</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Rhombus------------ -->
+                <div class="card  bg-base-100 shadow-xl p-12 hover:bg-[#50d1d6] hover:duration-1000">
+                  <figure><img src="./images/rhombus.png" alt="Shoes" /></figure>
+                  <div class="card-body">
+                    <h2 class="card-title justify-center">Rhombus</h2>
+                    <p class="text-center">Area (A) = 0.5 x d<sub>1</sub> x d<sub>2</sub></p>
+                    <div class="flex justify-center">
+                      <input id="rhombus-d1" class="bg-[#F1F1F1] p-2 w-24 rounded-md" type="text" placeholder="d₁">
+                      <span class="pr-6 pt-2">cm</span>
+                      <input id="rhombus-d2" class="bg-[#F1F1F1] p-2 w-24 rounded-md" type="text" placeholder="d₂">
+                      <span class="pt-2">cm</span>
+                    </div>
+                    <p>Area (A) =<span id="rhombus-area-value">0</span> <span>cm<sup>2</sup> </span> </p>
+                    <div class="card-actions">
+                      <button onclick="rhombusArea()" class="btn btn-primary w-full">Calculate</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Pentagon------------ -->
+                <div class="card  bg-base-100 shadow-xl p-12 hover:bg-[#3f3ac775] hover:duration-1000">
+                  <figure><img src="./images/pentagon.png" alt="Shoes" /></figure>
+                  <div class="card-body">
+                    <h2 class="card-title justify-center">Pentagon</h2>
+                    <p class="text-center">Area (A) = 0.5 x p x b</p>
+                    <div class="flex justify-center">
+                      <input id="pentagon-p" class="bg-[#F1F1F1] p-2 w-24 rounded-md" type="text" placeholder="p">
+                      <span class="pr-6 pt-2">cm</span>
+                      <input id="pentagon-b" class="bg-[#F1F1F1] p-2 w-24 rounded-md" type="text" placeholder="b">
+                      <span class="pt-2">cm</span>
+                    </div>
+                    <p>Area (A) =<span id="pentagon-area-value">0</span> <span>cm<sup>2</sup> </span> </p>
+                    <div class="card-actions">
+                      <button onclick="pentagonArea()" class="btn btn-primary w-full">Calculate</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Ellipse------------ -->
+                <div class="card  bg-base-100 shadow-xl p-12 hover:bg-[#dde74fc5] hover:duration-1000">
+                  <figure><img src="./images/ellipse.png" alt="Shoes" /></figure>
+                  <div class="card-body">
+                    <h2 class="card-title justify-center">Ellipse</h2>
+                    <p class="text-center">Area (A) = &#960;ab</p>
+                    <div class="flex justify-center">
+                      <input id="ellipse-a" class="bg-[#F1F1F1] p-2 w-24 rounded-md" type="text" placeholder="a">
+                      <span class="pr-6 pt-2">cm</span>
+                      <input id="ellipse-b" class="bg-[#F1F1F1] p-2 w-24 rounded-md" type="text" placeholder="b">
+                      <span class="pt-2">cm</span>
+                    </div>
+                    <p>Area (A) =<span id="ellipse-area-value">0</span> <span>cm<sup>2</sup> </span> </p>
+                    <div class="card-actions">
+                      <button onclick="ellipseArea()" class="btn btn-primary w-full">Calculate</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+               <!-- --------------------------------- -->
+              
+          </div>
+            <div class=" border-black border-2 rounded-lg h-[50%]  overflow-scroll">
+                <p class="text-2xl py-2  text-center">Area Result</p>
+                <hr class="border-red-700">
+                <div id="set-result" class="px-6 font-medium">
+              </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
